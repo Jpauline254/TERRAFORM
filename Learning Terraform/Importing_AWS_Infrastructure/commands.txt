@@ -1,0 +1,3 @@
+VpcID=$(aws ec2 describe-vpcs --region us-west-2 --filters Name=tag:Name,Values='Web VPC' --output text --query "Vpcs[].VpcId") && echo $
+
+#The above command queries for the VPC ID of the created resource
