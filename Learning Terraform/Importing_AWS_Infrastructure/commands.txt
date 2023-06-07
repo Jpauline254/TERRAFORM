@@ -1,3 +1,7 @@
+#command to get the VPC ID of the VPC to import into Terraform:
+
 VpcID=$(aws ec2 describe-vpcs --region us-west-2 --filters Name=tag:Name,Values='Web VPC' --output text --query "Vpcs[].VpcId") && echo $
 
-#The above command queries for the VPC ID of the created resource
+
+#Use terraform import specifying the aws_vpc.dev resource block and VPC ID:
+terraform import aws_vpc.dev $VpcID
