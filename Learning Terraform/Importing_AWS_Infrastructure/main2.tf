@@ -9,8 +9,9 @@ terraform {
 provider "aws" {
   region = "us-west-2"
 }
-
 #After import, get this resource block from the terraform show command
+#All arguments that cannot be managed by terraform have to be removed, you can get them from the terraform apply command
+
 resource "aws_vpc" "dev" {
     arn                              = "arn:aws:ec2:us-west-2:131649786772:vpc/vpc-0b94aafc4b19b532f"
     assign_generated_ipv6_cidr_block = false
